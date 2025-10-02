@@ -50,11 +50,11 @@ namespace BlazorServerJWTAuth.Controllers
         [Route("RefreshCookies")]
         public IActionResult RefreshToken(string jwtToken, string refreshToken, string redirectUrl)
         {
-            // Delete
+            // Delete..
             HttpContext.Response.Cookies.Delete(_settings.JWTCookieName);
             HttpContext.Response.Cookies.Delete(_settings.RefreshTokenCookieName);
 
-            // Reset
+            // Reset..
             HttpContext.Response.Cookies.Append(
                 _settings.JWTCookieName,
                 jwtToken,
